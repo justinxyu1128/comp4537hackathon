@@ -25,7 +25,7 @@ function filterResponse(response) {
     const secret = process.env.SECRET;
 
     if (response.toLowerCase().includes(secret.toLowerCase())) {
-        return "I cannot provide confidential information.";
+        return USER.blocked;
     }
 
     return response;
@@ -35,7 +35,7 @@ async function initializeGemini() {
     const filePath = path.join(
         __dirname,
         "data",
-        "file.txt"
+        CONSTANTS.filename
     );
 
     textFile = await ai.files.upload({
@@ -44,8 +44,6 @@ async function initializeGemini() {
             mimeType: "text/plain"
         }
     });
-
-    console.log("text file uploaded successfully!");
 }
 
 async function askGemini(question) {
@@ -102,8 +100,7 @@ async function askGemini(question) {
         return response.text;
 
     } catch (error) {
-        console.error("Gemini API Error:", error);
-        return "Sorry, something went wrong.";
+        return USER.server_error;
     }
 }
 await initializeGemini();
