@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>chatbot</title>
+        <script type="module" src="/index.js" defer></script>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <label for="secret-text">Check secret here:</label>
+            <textarea id="secret-text" name="secret-text"></textarea>
+            <button type="button" id="secret-btn">Verify Secret</button>
+            <p id="secret-response"></p>
+        </div>
+        <div class="container">
+            <label for="chatbot-text">Ask Chatbot:</label>
+            <textarea id="chatbot-text" name="chatbot-text"></textarea>
+            <button type="button" id="ask-btn">Submit</button>
+            <p id="chatbot-loading"></p>
+            <p id="chatbot-response"></p>
+        </div>
+    </body>
+</html>
