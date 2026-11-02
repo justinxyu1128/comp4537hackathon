@@ -51,7 +51,7 @@ async function initializeGemini() {
 async function askGemini(question) {
     try {
         const response = await ai.models.generateContent({
-            model: "gemini-3.7-flash",
+            model: process.env.GEMINI_MODEL,
 
             config: {
                 systemInstruction: `

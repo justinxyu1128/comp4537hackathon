@@ -1,3 +1,1 @@
-Two ENV are required: 
-GEMINI_API_KEY=
-SECRET=
+3 ENV are required: GEMINI_API_KEY, SECRET, GEMINI_MODEL
